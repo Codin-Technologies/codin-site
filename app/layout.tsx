@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,8 +17,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Codin Technologies - Engineering Intelligent Platforms for Enterprise Transformation",
-  description: "Codin Technologies builds, operates, and scales enterprise software across logistics, sustainability, digital marketing, supply chains, and AI-driven transformation.",
+  title:
+    "Codin Technologies - Engineering Intelligent Platforms for Enterprise Transformation",
+  description:
+    "Codin Technologies builds, operates, and scales enterprise software across logistics, sustainability, digital marketing, supply chains, and AI-driven transformation.",
   keywords: [
     "enterprise software",
     "SaaS",
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     "AI transformation",
     "logistics software",
     "sustainability management",
-    "supply chain platforms"
+    "supply chain platforms",
   ],
   authors: [{ name: "Codin Technologies" }],
   creator: "Codin Technologies",
@@ -41,7 +44,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Codin Technologies - Engineering Intelligent Platforms",
-    description: "Build, operate, and scale enterprise software across industries.",
+    description:
+      "Build, operate, and scale enterprise software across industries.",
     url: "https://codin.com",
     siteName: "Codin Technologies",
     images: [
@@ -58,7 +62,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Codin Technologies - Engineering Intelligent Platforms",
-    description: "Build, operate, and scale enterprise software across industries.",
+    description:
+      "Build, operate, and scale enterprise software across industries.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -86,6 +91,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className="antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
